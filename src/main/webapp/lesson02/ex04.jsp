@@ -28,7 +28,6 @@
 				String keySubject = iter.next();
 		%>
 			<tr>
-				<!--  th><%= keySubject %></th -->
 				<th>
 					<%
 						if (keySubject.equals("korean")){

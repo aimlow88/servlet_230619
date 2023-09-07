@@ -14,24 +14,32 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
+		<%!
+  			List<String> goodsList = Arrays.asList(new String[]{ 
+	  		    "저지방 우유", "요플레 4개", "딸기 1팩", "삼겹살 300g", "생수 6개", "주방 세제"
+	  		});
+		%>
+		
 		<div class="wrap container" style="margin:auto">
-		  <h1>장보기 목록</h1> 
+		  <div class="d-flex justify-content-center">
+		  	<h1>장보기 목록</h1>
+		  </div> 
 		  <div>
-		  	<table border="1" style="border-collapse: collapse">
-			  	<tr>
-			  		<th>번호</th>			  		
-			  		<th>품목</th>
-			  	</tr>
-			  	<%
-			  		List<String> goodsList = Arrays.asList(new String[]{ 
-			  		    "저지방 우유", "요플레 4개", "딸기 1팩", "삼겹살 300g", "생수 6개", "주방 세제"
-			  		});
-			  		
-			  		for (int i = 0; i < goodsList.size(); i++) {
-			  			out.print("<tr><td>" + (i + 1) + "</td>");
-			  			out.print("<td>" + goodsList.get(i) + "</td></tr>");
-			  		}
-			  	%>
+		  	<table class="table text-center">
+		  		<thead>
+				  	<tr>
+				  		<th scope="col">번호</th>			  		
+				  		<th scope="col">품목</th>
+				  	</tr>
+			  	</thead>
+			  	<tbody>
+				  	<%
+				  		for (int i = 0; i < goodsList.size(); i++) {
+				  			out.print("<tr><th scope=\"row\">" + (i + 1) + "</th>");
+				  			out.print("<td>" + goodsList.get(i) + "</td></tr>");
+				  		}
+				  	%>
+			  	</tbody>
 		  	</table>
 		  </div>
 		</div>
