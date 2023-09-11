@@ -14,7 +14,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>교포문고</title>
 	</head>
 	<body>
 		<%
@@ -82,7 +82,7 @@
 								<tr class="text-center">
 									<td scope="row"><%= mapList.get("id").toString()%></td>
 									<td scope="row"><img src=<%= mapList.get("image").toString()%> width="20"></td>
-									<td name="title" scope="row"><span class="text-info"><a href="/lesson02/quiz08_1.jsp?name=<%=mapList.get("title").toString()%>"><%= mapList.get("title").toString()%> </a></span></td>
+									<td scope="row"><a href="/lesson02/quiz08_1.jsp?id="<%= mapList.get("id").toString()%>> <%= mapList.get("title").toString()%> </a></td>
 								</tr>
 						<%
 							}

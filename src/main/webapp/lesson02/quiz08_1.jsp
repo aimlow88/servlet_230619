@@ -14,7 +14,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>교포문고</title>
 	</head>
 	<body>
 		<%
@@ -64,7 +64,7 @@
 		    list.add(map);
 		%>
 		<%
-			String title = request.getParameter("name");
+			String id = request.getParameter("id");
 			
 			Iterator<Map<String, Object>> iter = list.iterator();
 			String author = "";
@@ -72,7 +72,7 @@
 			String publisher = "";
 			while(iter.hasNext()) {
 				Map<String, Object> mapList = iter.next();
-				if (mapList.get("title").equals(title)) {
+				if (mapList.get("id").equals(id)) {
 					author = mapList.get("author").toString();
 					image = mapList.get("image").toString();
 					publisher = mapList.get("publisher").toString();
@@ -85,7 +85,7 @@
 				<img src=<%=image%> width="300" alt="">
 			</div>
 			<div>
-				<div class="display-2 font-weight-bold"><%=title%></div>
+				<div class="display-2 font-weight-bold"><%=id%></div>
 				<div class="display-3 text-info"><%=author %></div>
 				<div class="display-4"><%=publisher %></div>
 			</div>
