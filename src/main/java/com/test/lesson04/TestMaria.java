@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.test.common.MysqlService;
 
-@WebServlet("/lesson04/quiz01")
-public class Quiz01 extends HttpServlet {
+@WebServlet("/lesson04/testmaria")
+public class TestMaria extends HttpServlet {
 	
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -24,27 +24,14 @@ public class Quiz01 extends HttpServlet {
 		MysqlService ms = MysqlService.getInstance();
 		ms.connect();
 		
-		String insertQuery = "insert into `real_estate`"
-				+ " (`realtorId`, `address`, `area`, `type`, `price`)"
-				+ " values"
-				+ " (3, '헤라펠리스 101동 5305호', 350, '매매', 1500000)";
-		
-		try {
-			ms.update(insertQuery);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
 		String query = "select *"
-				+ " from `real_estate`"
-				+ " order by `id` desc"
-				+ " limit 10";
+				+ " from `user`";
 		try {
 			ResultSet res = ms.select(query);
 			while (res.next()) {//결과행이 있는 동안 계속 수행
-				out.print("매물주소 : " + res.getString("address"));
-				out.print(", 면적 : " + res.getInt("area"));
-				out.println(", 타입 : " + res.getString("type"));
+				out.print("ID : " + res.getInt("id"));
+				out.print(", 이름 : " + res.getString("name"));
+				out.println(", 취미 : " + res.getString("hobby"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

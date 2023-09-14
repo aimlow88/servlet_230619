@@ -10,6 +10,8 @@ public class MysqlService {
 	//필드
 	private static MysqlService mysqlService = null;
 	
+	// MySQL 8.0 : 192.168.111.200
+	// MariaDB 10.9 : 192.168.111.100
 	private String url = "jdbc:mysql://192.168.111.200:3306/test_230619"; // 도메인 뒤쪽에 데이터베이스 명까지 넣는다
 	private String id = "aimlow";
 	private String password = "syh960101t@";
@@ -61,6 +63,6 @@ public class MysqlService {
 	
 	//쿼리문 수행 - Create, Update, Delete(insert, update, delete)
 	public void update(String query) throws SQLException {
-		statement.executeQuery(query);
+		statement.executeUpdate(query);
 	}
 }
