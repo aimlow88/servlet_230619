@@ -1,5 +1,5 @@
-<%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.SQLException"%>
 <%@page import="com.test.common.MysqlService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>USER 목록</title>
 </head>
 <body>
 <%
@@ -16,12 +16,9 @@
 	ms.connect();
 	
 	String selectQuery = "select * from `new_user`";
-	try {
-		ResultSet res = ms.select(selectQuery);
-	} catch (SQLException e) {
-		e.printStackTrace();
-	}
 	
+	ResultSet res = ms.select(selectQuery);
+		
 %>
 	<h1>유저 목록</h1>
 	<table border="1">
